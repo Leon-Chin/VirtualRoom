@@ -18,7 +18,7 @@ const App = () => {
         position: 'absolute',
         height: '100%',
         width: '100%',
-        backgroundImage: "url('../src/assets/Classroom.png')",
+        backgroundImage: "url(/Classroom.png)",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         filter: 'blur(50px)',
@@ -32,7 +32,7 @@ const App = () => {
 
 const VirtualRoom = () => {
   return (
-    <div style={{ width: 800, minWidth: 800, height: 452, backgroundImage: "url('../src/assets/Classroom.png')", backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+    <div style={{ width: 800, minWidth: 800, height: 452, backgroundImage: "url(/Classroom.png)", backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
 
     </div>
   )
