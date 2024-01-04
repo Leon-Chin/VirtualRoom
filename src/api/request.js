@@ -2,44 +2,23 @@ import { message as $message } from 'antd';
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/api',
+    baseURL: 'http://localhost:8088/vcr',
 });
 
 axiosInstance.interceptors.request.use(
     config => {
-        store.dispatch(
-            setGlobalState({
-                loading: true,
-            }),
-        );
-
         return config;
     },
     error => {
-        store.dispatch(
-            setGlobalState({
-                loading: false,
-            }),
-        );
         Promise.reject(error);
     },
 );
 
 axiosInstance.interceptors.response.use(
     config => {
-        store.dispatch(
-            setGlobalState({
-                loading: false,
-            }),
-        );
         return config?.data;
     },
     error => {
-        store.dispatch(
-            setGlobalState({
-                loading: false,
-            }),
-        );
         let errorMessage = 'error';
 
         if (error?.message?.includes('Network Error')) {
